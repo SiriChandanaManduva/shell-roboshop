@@ -41,9 +41,9 @@ instance_id=$(aws ec2 run-instances \
             "Action": "UPSERT",
             "ResourceRecordSet": {
                 "Name": "'$RECORD_NAME'",
-                "Type": "CNAME",
+                "Type": "A",
                 "TTL": 1,
-                "ResourceRecords": [{"Value": "'IP'"}]
+                "ResourceRecords": [{"Value": "'$IP'"}]
             }
         }]
     }'
