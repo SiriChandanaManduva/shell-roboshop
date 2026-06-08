@@ -19,7 +19,7 @@ instance_id=$(aws ec2 run-instances \
   IP=$(
     aws ec2 describe-instances \
     --instance-ids $instance_id \
-    --query "Reservations[*].Instances[*].PrivateIpAddress" \
+    --query "Reservations[*].Instances[*].PublicIpAddress" \
     --output text
  )
    RECORD_NAME=$DOMAIN_NAME
@@ -27,7 +27,7 @@ instance_id=$(aws ec2 run-instances \
  IP=$(
     aws ec2 describe-instances \
     --instance-ids $instance_id \
-    --query "Reservations[*].Instances[*].PublicIpAddress" \
+    --query "Reservations[*].Instances[*].PrivateIpAddress" \
     --output text
  )
     RECORD_NAME=$instance.$DOMAIN_NAME
