@@ -4,7 +4,7 @@ set -e # this will be checking for errors, if errors it will exit
 
 USERID=$(id -u)
 LOGS_FOLDER="/var/log/shell-script"
-LOGS_FILE="LOGS_FOLDER/$0.log"
+LOGS_FILE="$LOGS_FOLDER/$0.log"
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
